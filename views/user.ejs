@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <h1>User Search Results:</h1>
+        <script src="/server.js"></script>
+        <link rel="stylesheet" type="text/css" href="/css/user.css">
+    </head>
+    <body>
+        <h2 id="user"></h2>
+        <table>
+            <th>Stats:</th>
+            <tr>
+                <td>Likes Recieved:</td>
+                <td id="likesRecieved"></td>
+            </tr>
+            <tr>
+                <td>Likes Given:</td>
+                <td id="likesGiven"></td>
+            </tr>
+            <tr>
+                <td>Decisions:</td>
+                <td id="decisions"></td>
+            </tr>
+            <tr>
+                <td>Messages:</td>
+                <td id="messages"></td>
+            </tr>
+        </table>
+        <script>
+            document.getElementById("user").innerHTML = sessionStorage.getItem("userSearch");
+            document.getElementById("likesRecieved").innerHTML = sessionStorage.getItem("likesRecieved");
+            document.getElementById("likesGiven").innerHTML = sessionStorage.getItem("likesGiven");
+            document.getElementById("decisions").innerHTML = sessionStorage.getItem("decisions");
+            document.getElementById("messages").innerHTML = sessionStorage.getItem("messages");
+        </script>
+        <br>
+        <button onclick="window.location.href='/profiles'">Return to Profiles</button>
+    </body>
+</html>

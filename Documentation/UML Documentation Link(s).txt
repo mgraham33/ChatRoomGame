@@ -1,0 +1,13 @@
+First Release UML Diagram Folder:
+
+Link: https://drive.google.com/drive/folders/1e-Kf9FwCswa3yKVGxWNbSqNwVU_wk3Ah?usp=sharing
+
+Contents: 
+    1. 319_ 1st Release Group Report Sequence Diagram
+    2. 319_ 1st Release Group Report Use Case Diagram
+    3. 319_1st Release Group Report Activity Diagram
+    4. 319_1st Release Group Report Class Diagram
+
+Notes:
+
+    Items 1-3 have been successfully implemented for the first release cycle. Item 4 is currently under revision; we desire to find and then implement a method of automatically generating UML Class Diagrams for this project. This is to ensure project documentation accuracy, given that the current implementation process has not prioritized using Class Diagrams for project planning. Only ensuring that the usecase of implemented code is well comprehended.

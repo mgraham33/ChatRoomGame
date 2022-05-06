@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/lobbySelect.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.socket.io/3.1.3/socket.io.min.js" integrity="sha384-cPwlPLvBTa3sKAgddT6krw0cJat7egBga3DJepJyrLl4Q9/5WLra3rrnMcyTyOnh" crossorigin="anonymous"></script>
+    <script src="/js/lobbySelect.js"></script>
+    <h1 style="text-align: center;"> Select A Lobby</h1>
+</head>
+<body>
+    <div id="lobbyFormContainer">
+        <form class="form" id="lobbyCreation">
+            <button id="closeForm" type="button">x</button> <br>
+            <label for="lobbyName">Lobby Name:</label>
+            <input type="text" id="lobbyName"> <br> <br>
+            <select name="lobbyType" id="lobbyType" form="lobbyCreation" required> 
+                <option value="">Choose a Gamemode</option>
+                <option value="Gamemode 1">Gamemode 1</option>
+                <option value="Gamemode 2">Gamemode 2</option>
+                <option value="Gamemode 3">Gamemode 3</option>
+            </select>
+            <br> <br>
+            <select name="numPlayers" id="numPlayers" form="lobbyCreation" required> 
+                <option value="">Number of Players</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+            <br> <br>
+            <input type="submit" id="formSubmit" value="Create Lobby">
+        </form>
+    </div>
+    <div id="buttonContainer">
+        <button id="createNewLobbyButton">Create New Lobby</button>
+        <button id="homeButton" onclick="window.location.href='\home'">Back to Home</button> 
+    </div>
+    <br> 
+    <table id="serverTable" class="serverTable">
+        <thead>
+            <tr>
+                <th>Server Name</th>
+                <th>Gamemode</th>
+                <th># of Players</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="hover" onclick="location.href = '/game/1'";>
+                <td>Lobby 1</td>
+                <td>Gamemode 1</td>
+                <td>0/0</td>
+            </tr>
+            <tr class="hover" onclick="location.href = '/game/2'";>
+                <td>Lobby 2</td>
+                <td>Gamemode 2</td>
+                <td>0/0</td>
+            </tr>
+            <tr class="hover" onclick="location.href = '/game/3'";>
+                <td>Lobby 3</td>
+                <td>Gamemode 3</td>
+                <td>0/0</td>
+            </tr>
+        </tbody>
+    </table>
+</body>

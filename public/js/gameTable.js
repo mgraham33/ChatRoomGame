@@ -1,0 +1,44 @@
+var mysql = require('mysql');
+
+var con = mysql.createConnection({
+  host:'coms-319-055.class.las.iastate.edu', //TODO: Make sure all of this stuff lines up with your setup.
+  user:'team1',
+  password:'team1comsVM@319',
+  database:'MyProject'
+});
+
+con.connect(function(err) {
+  if (err) throw err;
+  console.log("Connected to server!");
+  // add code here
+  var sqlCreate='CREATE TABLE IF NOT EXISTS games(id int NOT NULL AUTO_INCREMENT, current_scenario int, PRIMARY KEY (id))'
+  con.query(sqlCreate, function (err, result) {
+    if (err) {
+      console.log(err);
+      throw err;
+    } else{
+        console.log("Prepare to set up the first game: ");
+        var values= [
+          [1, 1],
+        ];
+        // add code here
+        var sqlInsert='INSERT INTO game_scenarios (id, current_scenario) values ?';
+        con.query(sqlInsert,[values], function (err, result) {
+          if (err) {
+            // console.log(err);
+            console.log("First game created!");
+          } else {
+            console.log("First game already exists.");
+          }
+        });
+
+        con.end(function(err) {
+         if (err) {
+           return console.log(err.message);
+         } else{
+           console.log("Close connection!");
+         }
+       });
+    }
+  });
+});

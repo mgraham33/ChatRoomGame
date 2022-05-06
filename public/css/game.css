@@ -1,0 +1,177 @@
+.screen{
+    width: 98%;
+    height: 98%;
+    position: absolute;
+    padding: 10px;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+body {
+    background-image: url('/img/background2.jpg');
+    background-repeat: no-repeat;
+    background-size: 150%;
+    background-position: 50%;
+    background-attachment: fixed;
+    background-blend-mode: color;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.gameTop{
+    width: 67%;
+    height: 67%;
+    float: left;
+    background-color: rgb(168, 168, 168);
+}
+
+.gameBottom{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 67%;
+    height: 31%;
+    float: left;
+    background-color: rgb(117, 117, 117);
+    z-index: 0;
+}
+
+#escapeButton {
+    float: right;
+    margin-top: 1%;
+    font-size: 120%;
+    width: 14%;
+    padding: 4px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    border-radius: 5%;
+    margin-right: 1%;
+    margin-left: 1%;
+}
+
+#escapeButton:hover{
+    background-color: #cac9c9;
+}
+
+#option1Button { 
+    position: relative;
+    background-color: #fffb00;
+    z-index: 1;
+    text-align: center;
+    font-weight: bold;
+    width: 36%;
+    height: 25%;
+    cursor: pointer;
+    margin-top: auto;
+    margin-bottom: auto;
+    transform: translateY(-20%);
+    font-size: 120%;
+    border-radius: 5%;
+}
+
+#option1Button:hover {
+    background-color: #bebb00;
+}
+
+#option2Button:hover {
+    background-color: #372794;
+}
+
+#option2Button { 
+    position: relative;
+    background-color: #4c35cc;
+    z-index: 1;
+    float: right;
+    text-align: center;
+    font-weight: bold;
+    width: 36%;
+    height: 25%;
+    cursor: pointer;
+    margin-top: auto;
+    margin-bottom: auto;
+    transform: translateY(-20%);
+    font-size: 120%;
+    border-radius: 5%;
+}
+
+#proceedButton:hover {
+    background-color: #269d42;
+}
+
+#proceedButton { 
+    position: relative;
+    background-color: #35cc58;
+    z-index: 1;
+    float: right;
+    text-align: center;
+    font-weight: bold;
+    width: 36%;
+    height: 25%;
+    cursor: pointer;
+    margin-top: auto;
+    margin-bottom: auto;
+    transform: translateY(-20%);
+    font-size: 120%;
+    border-radius: 5%;
+}
+
+#connectButton:hover {
+    background-color: #9d6d26;
+}
+
+#connectButton { 
+    position: relative;
+    background-color: #cc7935;
+    z-index: 1;
+    float: right;
+    text-align: center;
+    font-weight: bold;
+    width: 36%;
+    height: 25%;
+    cursor: pointer;
+    margin-top: auto;
+    margin-bottom: auto;
+    transform: translateY(-20%);
+    font-size: 120%;
+    border-radius: 5%;
+}
+
+.chatTop{
+    width: 33%;
+    height: 80%;
+    float: right;
+    background-color: #bebebe;
+}
+
+.chatBottom{
+    width: 33%;
+    height: 18%;
+    float: right;
+    background-color: #e7e7e7;
+}
+
+#chatboxForm{
+    width: 100%;
+    height: 100%;
+}
+
+#chatbox{
+    width: 100%;
+    height: 100%;
+    padding: 0, 0, 0, 0;
+    box-sizing: border-box;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background-color: #e7e7e7;
+    text-align: center;
+}
+
+.question{
+    float: center;
+    font-size: 250%;
+    padding-left: 1%;
+}
+
+.hide {
+    display: none;
+}

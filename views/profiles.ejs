@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        table, th, td {
+          border:1px solid black;
+        }
+        </style>
+    <head>
+        <h1>Welcome To User Lookup</h1>
+        <h2>Select a User to View Their Profile</h2>
+        <script src="/server.js"></script>
+        <link rel="stylesheet" type="text/css" href="/css/profileSelect.css">
+    </head>
+    <body onload="getUserList(); rowClick()">
+        <button onclick="window.location.href='\home'">Return to Home</button>
+        <br>
+        <br>
+        <div id="list">
+            <table id="listTable">
+                <th> Users:</th>
+                <!--LIST ELEMENTS ARE ADDED HERE BY THE SCRIPT TAG-->
+            </table>
+        </div>
+        <p id="currentUserHidden" class="hide"><%= currentUser %></p>
+        <p id="userListHidden" class="hide"><%= uList %></p>
+        <p id="likesRecievedHidden" class="hide"><%= lrList %></p>
+        <p id="likesGivenHidden" class="hide"><%= lgList %></p>
+        <p id="decisionsHidden" class="hide"><%= dList %></p>
+        <p id="messagesHidden" class="hide"><%= mList %></p>
+        <script>
+            function getUserList() {
+                const string = document.getElementById("userListHidden").textContent;
+                let i = 0;
+                let next = "";
+                let arr = [];
+                for (i = 0; i < string.length; i++) {
+                    if (string.charAt(i) != ',') {
+                        next += string.charAt(i);
+                        continue;
+                    }
+                    arr.push(next);
+                    next = "";
+                }
+                for (i = 0; i < arr.length; i++) {
+                    var tag = document.createElement("tr");
+                    var text = document.createTextNode(arr[i]);
+                    tag.setAttribute("id", arr[i]);
+                    tag.appendChild(text);
+                    var element = document.getElementById("listTable");
+                    element.appendChild(tag);
+                }
+            }
+
+            function rowClick() {
+                var table = document.getElementById("listTable");
+                var rows = table.getElementsByTagName("tr");
+
+                const lrString = document.getElementById("likesRecievedHidden").textContent;
+                let i = 0;
+                let next = "";
+                let lr = [];
+                for (i = 0; i < lrString.length; i++) {
+                    if (lrString.charAt(i) != ',') {
+                        next += lrString.charAt(i);
+                        continue;
+                    }
+                    lr.push(next);
+                    next = "";
+                }
+
+                const lgString = document.getElementById("likesGivenHidden").textContent;
+                i = 0;
+                next = "";
+                let lg = [];
+                for (i = 0; i < lgString.length; i++) {
+                    if (lgString.charAt(i) != ',') {
+                        next += lgString.charAt(i);
+                        continue;
+                    }
+                    lg.push(next);
+                    next = "";
+                }
+
+                const dString = document.getElementById("decisionsHidden").textContent;
+                i = 0;
+                next = "";
+                let d = [];
+                for (i = 0; i < dString.length; i++) {
+                    if (dString.charAt(i) != ',') {
+                        next += dString.charAt(i);
+                        continue;
+                    }
+                    d.push(next);
+                    next = "";
+                }
+
+                const mString = document.getElementById("messagesHidden").textContent;
+                i = 0;
+                next = "";
+                let m = [];
+                for (i = 0; i < mString.length; i++) {
+                    if (mString.charAt(i) != ',') {
+                        next += mString.charAt(i);
+                        continue;
+                    }
+                    m.push(next);
+                    next = "";
+                }
+
+                for (i = 1; i < rows.length; i++) {
+                    var currentRow = table.rows[i];
+                    var createClickHandler = function(row, id, likesRecieved, likesGiven, decisions, messages) {
+                        return function() {
+                            sessionStorage.setItem("userSearch", id);
+                            sessionStorage.setItem("likesRecieved", likesRecieved);
+                            sessionStorage.setItem("likesGiven", likesGiven);
+                            sessionStorage.setItem("decisions", decisions);
+                            sessionStorage.setItem("messages", messages);
+                            window.location.href='/user';
+                        };
+                    };
+                    currentRow.onclick = createClickHandler(currentRow, currentRow.id, lr[i - 1], lg[i - 1], d[i - 1], m[i - 1]);
+                }
+            }
+        </script>
+    </body>
+</html>

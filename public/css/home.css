@@ -1,0 +1,78 @@
+body {
+    text-align: center;
+    margin-top: 8%;
+    background-image: url('/img/background2.jpg');
+    background-repeat: no-repeat;
+    background-size: 150%;
+    background-position: 50%;
+    background-attachment: fixed;
+    background-blend-mode: color;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+h2 {
+    font-size: 150%;
+    font-style: oblique;
+}
+
+button {
+    margin-top: 25px;
+    font-size: 120%;
+    width: 8%;
+    padding: 4px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    border-radius: 5%;
+    margin-right: 2.5%;
+    margin-left: 2.5%;
+}
+
+h1 {
+    font-size: 300%;
+    font-style: oblique;
+}
+
+label {
+    margin-top: 1%;
+    font-style: italic;
+}
+
+button:hover{
+    background-color: #cac9c9;
+}
+
+#joinGame {
+    display: inline;
+}
+
+#joinGame:hover~#hideJoin {
+    display: block;
+}
+
+#hideJoin {
+    display: none;
+}
+
+#findUser {
+    display: inline;
+}
+
+#findUser:hover~#hideFind {
+    display: block;
+}
+
+#hideFind {
+    display: none;
+}
+
+#signOut {
+    display: inline;
+}
+
+#signOut:hover~#hideExit {
+    display: block;
+}
+
+#hideExit {
+    display: none;
+}

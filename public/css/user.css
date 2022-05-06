@@ -1,0 +1,48 @@
+body {
+    text-align: center;
+    margin-top: 2%;
+    background-image: url('/img/background2.jpg');
+    background-repeat: no-repeat;
+    background-size: 150%;
+    background-position: 50%;
+    background-attachment: fixed;
+    background-blend-mode: color;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+h1 {
+    text-align: center;
+    font-size: 300%;
+    font-style: oblique;
+}
+h2 {
+    font-size: 250%;
+}
+
+th {
+    text-decoration: underline;
+    padding: 6px;
+}
+
+button {
+    font-size: 120%;
+    width: 11%;
+    padding: 4px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    border: 1.5px solid black;
+    border-collapse: collapse;
+    width: 15%;
+    text-align: center;
+    font-size: 125%;
+}
+
+tr, td {
+    border: 0.5px solid black;
+    padding: 4px;
+}

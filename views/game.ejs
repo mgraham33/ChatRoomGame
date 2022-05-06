@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="/css/game.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+        <script src="/js/game.js"></script>
+    </head>
+    <body class="screen" id="screen" data-lobby=<%= lobby %>>
+        <div class="gameTop">
+            <button type="button" class="escapeButton" id="escapeButton" onclick="updateStats()">Leave Game</button>
+            <h2 class="question" id="question">This is the default question </p>
+        </div>
+        <div class="chatTop"> </div>
+        <div class="gameBottom">
+            <button type="button" class="option1Button" id="option1Button" onclick="addDescision()" style="display: none;">Option 1</button>
+            <button type="button" class="proceedButton" id="proceedButton" style="display: none;">Proceed</button>
+            <button type="button" class="connectButton" id="connectButton" style="display: block;">Connect</button>
+            <button type="button" class="option2Button" id="option2Button" onclick="addDescision()" style="display: none;">Option 2</button>
+            <p id="d" class="hide">0</p>
+            <p id="m" class="hide">0</p>
+        </div>
+        <div class="chatBottom">
+            <form class="chatboxForm" id="chatboxForm">
+                <!--temporary onclick since hitting enter refreshes the page-->
+                <input type="text" id="chatbox" placeholder="Chat Here" onclick="addMessage()">
+            </form>
+        </div>
+        <script>
+            let d = 0;
+            function addDescision() {
+                d++;
+                document.getElementById("d").innerHTML = d;
+            }
+
+            let m = 0;
+            function addMessage() {
+                m++;
+                document.getElementById("m").innerHTML = m;
+            }
+
+            function updateStats() {
+                //addStats(d, m);
+                $.ajax({
+                    type: 'GET',
+                    url: 'http://localhost:3000/incDesc/' + d
+                });
+
+                $.ajax({
+                    type: 'GET',
+                    url: 'http://localhost:3000/incMEss/' + m
+                });
+            }
+        </script>
+    </body>
+</html>

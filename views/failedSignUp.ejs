@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <h1>Welcome New User</h1>
+        <link rel="stylesheet" type="text/css" href="/css/login.css">
+    </head>
+    <body>
+
+        <form id="signupForm" action="\signup" method="POST" >
+            <fieldset>
+                <legend> Sign Up </legend>
+                <p>
+                    <label for="username">Username: </label>
+                    <input id="username" name="username" type="text" required/>
+    
+                </p>
+                <p>
+                    <label for="password">Password: </label>
+                    <input id="password" name="password" type="password" required/>
+    
+                </p>
+    
+                <input class="btn" type="submit" id="submit"/>
+
+                <br>
+                <br>
+                <a href="\login">Back to Login</a>
+    
+            </fieldset>
+    
+        </form>
+        
+        <p>
+            <label id= "message">Sign Up Failed, please make sure you have inputted both a username and password, and try a new username.</label>
+        </p>
+    </body>
+</html>

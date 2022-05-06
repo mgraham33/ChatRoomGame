@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <h1>Welcome to The Collaborative</h1>
+        <h1>Story Telling Game</h1>
+        <link rel="stylesheet" type="text/css" href="/css/login.css">
+    </head>
+    <body>
+
+        <form id="loginForm" action="\login" method="POST" >
+            <fieldset>
+                <legend> Login </legend>
+                <p>
+                    <label for="username">Username: </label>
+                    <input id="username" name="username" type="text"/>
+    
+                </p>
+                <p>
+                    <label for="password">Password: </label>
+                    <input id="password" name="password" type="password"/>
+    
+                </p>
+    
+                <input class="btn" type="submit" id="submit"/>
+
+                <br>
+                <br>
+                <a href="\signup">Not a current user? Sign Up here</a>
+    
+            </fieldset>
+    
+        </form>
+        
+        <p>
+            <label id= "message">Login Failed, please retry or sign up</label>
+        </p>
+    </body>
+</html>
